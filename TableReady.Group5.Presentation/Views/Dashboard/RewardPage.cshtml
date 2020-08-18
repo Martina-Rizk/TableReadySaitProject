@@ -1,0 +1,105 @@
+﻿@model dynamic
+
+@{
+    ViewData["Title"] = "RewardPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div align="center" style="margin:50px;">
+    <h3> Resturant Grid </h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("ID")
+                </th>
+                <th>
+                    @Html.DisplayName("Name")
+                </th>
+                <th>
+                    @Html.DisplayName("Description")
+                </th>
+                <th>
+                    @Html.DisplayName("Action")
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ResturantGrid)
+            {
+                <tr>
+                    <td>
+                        @item.ID
+                    </td>
+                    <td>
+                        @item.RestaurantName
+                    </td>
+                    <td>
+                        @item.RestaurantDescription
+                    </td>
+                    <td>
+                        @Html.ActionLink("Review", "RedirectToReview", "Dashboard", new { id = item.ID }, null)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<br />
+
+<div align="center" style="margin:50px;">
+    <h3> Reward Grid </h3>
+    <br />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("ID")
+                </th>
+                <th>
+                    @Html.DisplayName("Resturant ID")
+                </th>
+                <th>
+                    @Html.DisplayName("Customer ID")
+                </th>
+                <th>
+                    @Html.DisplayName("Free Product")
+                </th>
+                <th>
+                    @Html.DisplayName("Points")
+                </th>
+                <th>
+                    @Html.DisplayName("Checked In")
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.RewardGrid)
+            {
+            <tr>
+                <td>
+                    @item.ID
+                </td>
+                <td>
+                    @item.RestaurantID
+                </td>
+                <td>
+                    @item.CustomerID
+                </td>
+                <td>
+                    @item.FreeProduct
+                </td>
+                <td>
+                    @item.Points
+                </td>
+                <td>
+                    @item.CheckedValue
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

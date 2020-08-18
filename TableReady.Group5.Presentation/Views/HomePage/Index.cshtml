@@ -1,0 +1,72 @@
+﻿@*
+    <summary>
+    Home page
+    Author: Martina Rizk
+    Date: August 7, 2020
+    </summary>
+*@
+
+@model IEnumerable<TableReady.Group5.Domain.Restaurant>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="container-fluid" style="height:600px; width:100%; position:relative; padding:0; margin:0;">
+    <img id="top" src="~/images/img1.jpg" style="height:600px; width:100%;" />
+    <h3 style="position: absolute; font-size: 25px; font-weight:800; color: #f53939; top: 90px; left: 700px;">Table Ready</h3>
+    <p style="position: absolute; font-size: 20px; color: #f53939; top: 120px; left: 700px;">
+        Reservation and Waitlisting made easy!<br />
+        Reminders and Easy Cancellation<br />
+        without giving away your Phone Number.
+    </p>
+    <div class="container reserve" style="position: absolute; font-size: 25px; color: #f53939; height: 50px; width: 550px; top: 270px; left: 700px;">
+        <div class="row">
+            <div class="col-4">
+                <input type="date" class="date" style="font-size: 15px; width: 150px; height: 45px; padding: 0; border-color: lightgray; border-style: none; border-radius: 10px;" value="@DateTime.Today.ToShortDateString()" />
+            </div>
+            <div class="col-4">
+                <input type="time" class="time" style="font-size: 15px; width: 150px; height: 45px; padding: 0; border-color: lightgray; border-style: none; border-radius: 10px;" value="@DateTime.Now.ToShortTimeString()" />
+            </div>
+            <div class="col-4">
+                <select id="Select1" style="font-size: 15px; width: 150px; height: 45px; padding: 0; border-color: lightgray; border-style: none; border-radius: 10px;">
+                    <option>1 person</option>
+                    <option>2 people</option>
+                    <option>3 people</option>
+                    <option>4 people</option>
+                    <option>5 people</option>
+                    <option>6 people</option>
+                    <option>7 people</option>
+                    <option>8 people</option>
+                    <option>9 people</option>
+                    <option>+10 people</option>
+                </select>
+            </div>
+            <div class="col-4" style="padding-top:15px;">
+                <input id="Button1" type="button" value="Let's go!" style="background-color:#f62c2c; border-radius:20px; width:150px; border-style:none; text-align:center;" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="" style="padding: 5px;">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            @Html.DisplayFor(modelItem => item.RestaurantName)
+                        </h5>
+                        <p class="card-text">
+                            @Html.DisplayFor(modelItem => item.RestaurantDescription)
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

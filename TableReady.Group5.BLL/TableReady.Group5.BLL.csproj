@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TableReady.Group5.Data\TableReady.Group5.Data.csproj" />
+    <ProjectReference Include="..\TableReady.Group5.Domain\TableReady.Group5.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
